@@ -1,0 +1,34 @@
+.navbar {
+    background: rgba(0, 0, 0, .8)!important;
+}
+.navbar-brand img {
+    height:3rem;
+}
+hr {
+    border-width: .5rem;
+    width: 100%;
+    height: auto;
+}
+p {
+    font-size: 1.2rem;
+}
+video {
+    width: 100%;
+    height: auto;
+}
+.carousel-item {
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+}
+.picture img{
+    border-radius: .5rem;
+    transition:.2s;
+    width: 100%;
+    height: auto;
+}
+.picture img:hover {
+    border: 2px solid #ccc;
+    transform: scale(1.05);
+}
