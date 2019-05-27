@@ -1,5 +1,5 @@
 
-
+/*
 document.getElementById("showless").addEventListener("click", showLess);
 
 function showLess() {
@@ -10,7 +10,7 @@ function showLess() {
     document.getElementById("showless").innerHTML = "Mai mult";
   }
 }
-
+*/
 $(document).ready(function(){
   // Add smooth scrolling to all links
   $("a").on('click', function(event) {
