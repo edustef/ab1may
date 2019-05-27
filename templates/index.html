@@ -1,297 +1,182 @@
-<!DOCTYPE html>
+{% extends "layout.html" %}
 
-<html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet">
-        <link href="static/lightbox.css" rel="stylesheet">
-        <link href="static/styles.css" rel="stylesheet">
-        <title>My Webpage</title>
-    </head>
-    <body data-spy="scroll" data-target=".navbar" data-offset="80" class="bg-light">
-        <!-- Slideshow images-->
-        <div id="demo" class="carousel slide" data-ride="carousel">
-            <!-- Indicators -->
-            <ul class="carousel-indicators">
-                <li data-target="#demo" data-slide-to="0" class="active"></li>
-                <li data-target="#demo" data-slide-to="1"></li>
-                <li data-target="#demo" data-slide-to="2"></li>
-            </ul>
-            
-            <!-- The slideshow -->
-            <div class="carousel-inner">
-                <div class="carousel-item active" style="background-image: url(static/images/slide3.jpg)">
-                    <div class="carousel-caption text-center" style="margin-bottom: 2rem;">
-                        <h1 style="margin-bottom: 2rem;"> La mulți ani!</h1>
-                        <a href="#home" class="btn btn-primary btn-lg">Click aici</a>
-                    </div>
-                </div>
-                <div class="carousel-item" style="background-image: url(static/images/slide2.jpg)">
-                </div>
-                <div class="carousel-item" style="background-image: url(static/images/slide1.jpg)">
+{% block content %}
+    <!-- Slideshow images-->
+    <div id="demo" class="carousel slide" data-ride="carousel">
+        <!-- Indicators -->
+        <ul class="carousel-indicators">
+            <li data-target="#demo" data-slide-to="0" class="active"></li>
+            <li data-target="#demo" data-slide-to="1"></li>
+            <li data-target="#demo" data-slide-to="2"></li>
+        </ul>
+        
+        <!-- The slideshow -->
+        <div class="carousel-inner">
+            <div class="carousel-item active" style="background-image: url(static/images/slide3.jpg)">
+                <div class="carousel-caption text-center" style="margin-bottom: 2rem;">
+                    <h1 style="margin-bottom: 2rem;"> La mulți ani!</h1>
+                    <a href="#home" class="btn btn-primary btn-lg">Click aici</a>
                 </div>
             </div>
-            
-            <!-- Left and right controls -->
-            <a class="carousel-control-prev" href="#demo" data-slide="prev">
-                <span class="carousel-control-prev-icon"></span>
-            </a>
-            <a class="carousel-control-next" href="#demo" data-slide="next">
-                <span class="carousel-control-next-icon"></span>
-            </a>
-        </div>
-        <!-- END Slideshow images-->
-
-        <!--NAVBAR-->
-        <nav id= "home" class="navbar navbar-expand-sm bg-dark navbar-dark sticky-top">
-            <a class="navbar-brand" href="#demo"><img src="static/images/logo.jpeg"></a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="collapsibleNavbar"> 
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#description">Descriere</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#gallery">Galerie foto</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#gallvideo">Galerie video</a>
-                    </li>
-                </ul>
+            <div class="carousel-item" style="background-image: url(static/images/slide2.jpg)">
             </div>
-        </nav>
-        <!--END NAVBAR-->
-
-        <!-- Description -->
-        <div id="description" class="container-fluid bg-light text-center" style="padding-top:70px;padding-bottom:70px">
-            <h1>La mulți ani iubire!</h1>
-            <p>De ziua ta am pregătit un <span class="font-weight-bold">site</span> doar al nostru.</p>
-            <p>Am vrut să îți scriu ceva mai mult și m-ai drăguț dar nu am avut timp :(</p>
-            <h4>Te iubesc cel mai mult!</h4>
-            <h3>Acuma poți să dai in jos...</h3>
-        </div>
-        <!-- END Description -->
-
-        <div class="container-fluid">
-            <hr>
+            <div class="carousel-item" style="background-image: url(static/images/slide1.jpg)">
+            </div>
         </div>
         
-        <!--Gallery-->
-        <div id="gallery" class="container-fluid bg-light" style="padding-top:70px;padding-bottom:70px">
-            <h1 class="my-4 text-center">Galerie foto</h1>
-            <div class="row">
-                <div class="col-md-3 col-6 mb-2 picture">
-                    <a target="_blank" href="static/images/pic1.jpg" data-lightbox="mygallery">
-                        <img class="img-responsive" src="static/images/pic1.jpg" alt="city">
-                    </a>
-                </div>
-                <div class="col-md-3 col-6 mb-2 picture">
-                    <a target="_blank" href="static/images/pic2.jpg" data-lightbox="mygallery">
-                        <img class="img-responsive" src="static/images/pic2.jpg" alt="city">
-                    </a>
-                </div>
-                <div class="col-md-3 col-6 mb-2 picture">
-                    <a target="_blank" href="static/images/pic3.jpg" data-lightbox="mygallery">
-                        <img class="img-responsive" src="static/images/pic3.jpg" alt="city">
-                    </a>
-                </div>
-                <div class="col-md-3 col-6 mb-2 picture">
-                    <a target="_blank" href="static/images/pic4.jpg" data-lightbox="mygallery">
-                        <img class="img-responsive" src="static/images/pic4.jpg" alt="city">
-                    </a>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-3 col-6 mb-2 picture">
-                    <a target="_blank" href="static/images/pic5.jpg" data-lightbox="mygallery">
-                        <img class="img-responsive" src="static/images/pic5.jpg" alt="city">
-                    </a>
-                </div>
-                <div class="col-md-3 col-6 mb-2 picture">
-                    <a target="_blank" href="static/images/pic12.jpg" data-lightbox="mygallery">
-                        <img class="img-responsive" src="static/images/pic12.jpg" alt="city">
-                    </a>
-                </div>
-                <div class="col-md-3 col-6 mb-2 picture">
-                    <a target="_blank" href="static/images/pic7.jpg" data-lightbox="mygallery">
-                        <img class="img-responsive" src="static/images/pic7.jpg" alt="city">
-                    </a>
-                </div>
-                <div class="col-md-3 col-6 mb-2 picture">
-                    <a target="_blank" href="static/images/pic10.jpg" data-lightbox="mygallery">
-                        <img class="img-responsive" src="static/images/pic10.jpg" alt="city">
-                    </a>
-                </div>
-            </div>
-            <!-- Show more -->
-            <div class="row">
-                <div id="collgal" class="collapse pt-3">
-                    <div class="row">
-                        <div class="col-md-3 col-6 mb-2 picture">
-                            <a target="_blank" href="static/images/pic8.jpg" data-lightbox="mygallery">
-                                <img class="img-responsive" src="static/images/pic8.jpg" alt="city">
-                            </a>
-                        </div>
-                        <div class="col-md-3 col-6 mb-2 picture">
-                            <a target="_blank" href="static/images/pic9.jpg" data-lightbox="mygallery">
-                                <img class="img-responsive" src="static/images/pic9.jpg" alt="city">
-                            </a>
-                        </div>
-                        <div class="col-md-3 col-6 mb-2 picture">
-                            <a target="_blank" href="static/images/pic11.jpg" data-lightbox="mygallery">
-                                <img class="img-responsive" src="static/images/pic11.jpg" alt="city">
-                            </a>
-                        </div>
-                        <div class="col-md-3 col-6 mb-2 picture">
-                            <a target="_blank" href="static/images/pic12.jpg" data-lightbox="mygallery">
-                                <img class="img-responsive" src="static/images/pic12.jpg" alt="city">
-                            </a>
-                        </div>
-                        <div class="col-md-3 col-6 mb-2 picture">
-                            <a target="_blank" href="static/images/pic14.jpg" data-lightbox="mygallery">
-                                <img class="img-responsive" src="static/images/pic14.jpg" alt="city">
-                            </a>
-                        </div>
-                        <div class="col-md-3 col-6 mb-2 picture">
-                            <a target="_blank" href="static/images/pic16.jpg" data-lightbox="mygallery">
-                                <img class="img-responsive" src="static/images/pic16.jpg" alt="city">
-                            </a>
-                        </div>
-                        <div class="col-md-3 col-6 mb-2 picture">
-                            <a target="_blank" href="static/images/pic17.jpg" data-lightbox="mygallery">
-                                <img class="img-responsive" src="static/images/pic17.jpg" alt="city">
-                            </a>
-                        </div>
-                        <div class="col-md-3 col-6 mb-2 picture">
-                            <a target="_blank" href="static/images/pic18.jpg" data-lightbox="mygallery">
-                                <img class="img-responsive" src="static/images/pic18.jpg" alt="city">
-                            </a>
-                        </div>
-                        <div class="col-md-3 col-6 mb-2 picture">
-                            <a target="_blank" href="static/images/pic19.jpg" data-lightbox="mygallery">
-                                <img class="img-responsive" src="static/images/pic19.jpg" alt="city">
-                            </a>
-                        </div>
-                        <div class="col-md-3 col-6 mb-2 picture">
-                            <a target="_blank" href="static/images/pic20.jpg" data-lightbox="mygallery">
-                                <img class="img-responsive" src="static/images/pic20.jpg" alt="city">
-                            </a>
-                        </div>
-                        <div class="col-md-3 col-6 mb-2 picture">
-                            <a target="_blank" href="static/images/pic21.jpg" data-lightbox="mygallery">
-                                <img class="img-responsive" src="static/images/pic21.jpg" alt="city">
-                            </a>
-                        </div>
-                        <div class="col-md-3 col-6 mb-2 picture">
-                                <a target="_blank" href="static/images/pic22.jpg" data-lightbox="mygallery">
-                                    <img class="img-responsive" src="static/images/pic22.jpg" alt="city">
-                                </a>
-                            </div>
-                        <div class="col-md-3 col-6 mb-2 picture">
-                            <a target="_blank" href="static/images/pic23.jpg" data-lightbox="mygallery">
-                                <img class="img-responsive" src="static/images/pic23.jpg" alt="city">
-                            </a>
-                        </div>
-                        <div class="col-md-3 col-6 mb-2 picture">
-                            <a target="_blank" href="static/images/pic24.jpg" data-lightbox="mygallery">
-                                <img class="img-responsive" src="static/images/pic24.jpg" alt="city">
-                            </a>
-                        </div>
-                        <div class="col-md-3 col-6 mb-2 picture">
-                            <a target="_blank" href="static/images/pic25.jpg" data-lightbox="mygallery">
-                                <img class="img-responsive" src="static/images/pic25.jpg" alt="city">
-                            </a>
-                        </div>
-                        <div class="col-md-3 col-6 mb-2 picture">
-                            <a target="_blank" href="static/images/pic26.jpg" data-lightbox="mygallery">
-                                <img class="img-responsive" src="static/images/pic26.jpg" alt="city">
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="container text-center">
-                    <button id="showless" class="btn btn-primary btn-lg mt-3" data-toggle="collapse" data-target="#collgal">Mai mult</button>
-                </div>  
-            </div>
-            <!-- END Show more -->
-        </div>
-        <!--END Gallery-->
+        <!-- Left and right controls -->
+        <a class="carousel-control-prev" href="#demo" data-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+        </a>
+        <a class="carousel-control-next" href="#demo" data-slide="next">
+            <span class="carousel-control-next-icon"></span>
+        </a>
+    </div>
+    <!-- END Slideshow images-->
 
-        <div class="container-fluid">
-            <hr>
+    <!--NAVBAR-->
+    <nav id="home" class="navbar navbar-expand-sm bg-dark navbar-dark sticky-top">
+        <a class="navbar-brand" href="#demo"><img src="static/images/logo.jpeg"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="collapsibleNavbar"> 
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="#description">Descriere</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#gallery">Galerie foto</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#gallvideo">Galerie video</a>
+                </li>
+            </ul>
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="login.html">Login</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <!--END NAVBAR-->
+
+    <!-- Description -->
+    <div id="description" class="container-fluid bg-light text-center" style="padding-top:70px;padding-bottom:70px">
+        <h1>La mulți ani iubire!</h1>
+        <p>De ziua ta am pregătit un <span class="font-weight-bold">site</span> doar al nostru.</p>
+        <p>Am vrut să îți scriu ceva mai mult și m-ai drăguț dar nu am avut timp :(</p>
+        <h4>Te iubesc cel mai mult!</h4>
+        <h3>Acuma poți să dai in jos...</h3>
+    </div>
+    <!-- END Description -->
+
+    <div class="container-fluid">
+        <hr>
+    </div>
+
+    <!--Gallery-->
+    <div id="gallery" class="container-fluid bg-light" style="padding-top:70px;padding-bottom:70px">
+        <h1 class="my-4 text-center">Galerie foto</h1>
+        <div class="row">
+          <div class="col-md-3 col-xs-4 col-6 mb-4 picture">
+            <a target="_blank" href="static/images/pic1.jpg" data-lightbox="mygallery">
+                <img class="img-responsive" src="static/images/pic1.jpg" alt="city">
+            </a>
+          </div>
+          <div class="col-md-3 col-xs-4 col-6 mb-4 picture">
+            <a target="_blank" href="static/images/pic2.jpg" data-lightbox="mygallery">
+                <img class="img-responsive" src="static/images/pic2.jpg" alt="city">
+            </a>
+          </div>
+          <div class="col-md-3 col-xs-4 col-6 mb-4 picture">
+            <a target="_blank" href="static/images/pic3.jpg" data-lightbox="mygallery">
+                <img class="img-responsive" src="static/images/pic3.jpg" alt="city">
+            </a>
+          </div>
+          <div class="col-md-3 col-xs-4 col-6 mb-4 picture">
+            <a target="_blank" href="static/images/pic4.jpg" data-lightbox="mygallery">
+                <img class="img-responsive" src="static/images/pic4.jpg" alt="city">
+            </a>
+          </div>
+          <div class="col-md-3 col-xs-4 col-6 mb-4 picture">
+	          <a target="_blank" href="static/images/pic5.jpg" data-lightbox="mygallery">
+	              <img class="img-responsive" src="static/images/pic5.jpg" alt="city">
+	          </a>
+	        </div>
+	        <div class="col-md-3 col-xs-4 col-6 mb-4 picture">
+            <a target="_blank" href="static/images/pic12.jpg" data-lightbox="mygallery">
+                <img class="img-responsive" src="static/images/pic12.jpg" alt="city">
+            </a>
+	        </div>
+	        <div class="col-md-3 col-xs-4 col-6 mb-4 picture">
+            <a target="_blank" href="static/images/pic7.jpg" data-lightbox="mygallery">
+                <img class="img-responsive" src="static/images/pic7.jpg" alt="city">
+            </a>
+	        </div>
+	        <div class="col-md-3 col-xs-4 col-6 mb-4 picture">
+            <a target="_blank" href="static/images/pic10.jpg" data-lightbox="mygallery">
+                <img class="img-responsive" src="static/images/pic10.jpg" alt="city">
+            </a>
+	        </div>
         </div>
 
-        <!--Galerie video -->
-        <div id="gallvideo" class="container-fluid bg-light" style="padding-top:70px;padding-bottom:70px">
-            <h1 class="my-4 text-center">Galerie video</h1>
-            <div class="row">
-                <div class="col-md-3 col-12 py-2">
-                    <video width="100" controls>
-                        <source src="static\videos\video1.mp4" type="video/mp4">
-                    </video>
-                </div>
-                <div class="col-md-3 col-12 py-2">
-                    <video width="100" controls>
-                        <source src="static\videos\video2.mp4" type="video/mp4">
-                    </video>
-                </div>
-                <div class="col-md-3 col-12 py-2">
-                    <video width="100" controls>
-                        <source src="static\videos\video3.mp4" type="video/mp4">
-                    </video>
-                </div>
-                <div class="col-md-3 col-12 py-2">
-                    <video width="100" controls>
-                        <source src="static\videos\video4.mp4" type="video/mp4">
-                    </video>
-                </div>
-                <div class="col-md-3 col-12 py-2">
-                    <video width="100" controls>
-                        <source src="static\videos\video5.mp4" type="video/mp4">
-                    </video>
-                </div>
-                <div class="col-md-3 col-12 py-2">
-                    <video width="100" controls>
-                        <source src="static\videos\video6.mp4" type="video/mp4">
-                    </video>
-                </div>
-                <div class="col-md-3 col-12 py-2">
-                    <video width="100" controls>
-                        <source src="static\videos\video7.mp4" type="video/mp4">
-                    </video>
-                </div>
-                <div class="col-md-3 col-12 py-2">
-                    <video width="100" controls>
-                        <source src="static\videos\video8.mp4" type="video/mp4">
-                    </video>
-                </div>
+    </div>
+    <!--END Gallery-->
+
+    <div class="container-fluid">
+        <hr>
+    </div>
+
+    <!--Galerie video -->
+    <div id="gallvideo" class="container-fluid bg-light" style="padding-top:70px;padding-bottom:70px">
+        <h1 class="my-4 text-center">Galerie video</h1>
+        <div class="row">
+            <div class="col-md-3 col-12 py-2">
+                <video width="100" controls>
+                    <source src="static\videos\video1.mp4" type="video/mp4">
+                </video>
+            </div>
+            <div class="col-md-3 col-12 py-2">
+                <video width="100" controls>
+                    <source src="static\videos\video2.mp4" type="video/mp4">
+                </video>
+            </div>
+            <div class="col-md-3 col-12 py-2">
+                <video width="100" controls>
+                    <source src="static\videos\video3.mp4" type="video/mp4">
+                </video>
+            </div>
+            <div class="col-md-3 col-12 py-2">
+                <video width="100" controls>
+                    <source src="static\videos\video4.mp4" type="video/mp4">
+                </video>
+            </div>
+            <div class="col-md-3 col-12 py-2">
+                <video width="100" controls>
+                    <source src="static\videos\video5.mp4" type="video/mp4">
+                </video>
+            </div>
+            <div class="col-md-3 col-12 py-2">
+                <video width="100" controls>
+                    <source src="static\videos\video6.mp4" type="video/mp4">
+                </video>
+            </div>
+            <div class="col-md-3 col-12 py-2">
+                <video width="100" controls>
+                    <source src="static\videos\video7.mp4" type="video/mp4">
+                </video>
+            </div>
+            <div class="col-md-3 col-12 py-2">
+                <video width="100" controls>
+                    <source src="static\videos\video8.mp4" type="video/mp4">
+                </video>
             </div>
         </div>
-        <!--END Gallery video-->
+    </div>
+    <!--END Gallery video-->
 
-        <div class="container-fluid">
-            <hr>
-        </div>
-
-        <!-- Footer-->
-        <footer class="container-fluid bg-light " style="padding-top:70px;padding-bottom:70px">   
-            <address>
-                    Written by <a target = "_blank" href="eduardstefan290@gmail.com.com">Eduard Stefan</a><br> 
-                    Visit my <a target = "_blank" href = "https://github.com/edustef?tab=repositories">github page</a><br>
-                    Palomares, Cuevas de Almanzora<br>
-                    Spain
-            </address>
-        </footer>
-        <!-- End Footer-->
-
-        <!-- Scrips necesary for bootstrap-->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-        <script src="js/lightbox.js"></script>
-        <script src="js/script.js"></script>    
-    </body>
-</html>
+    <div class="container-fluid">
+        <hr>
+    </div>
+{% endblock%}

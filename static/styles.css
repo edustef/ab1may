@@ -1,6 +1,9 @@
 .navbar {
     background: rgba(0, 0, 0, .8)!important;
 }
+.navbar li {
+    border-radius: 16px;
+}
 .navbar-brand img {
     height:3rem;
 }
