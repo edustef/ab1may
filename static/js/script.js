@@ -1,13 +1,13 @@
 
 /*
-document.getElementById("showless").addEventListener("click", showLess);
+document.querySelector("#showless").addEventListener("click", showLess);
 
 function showLess() {
-  if (document.getElementById("showless").innerHTML == "Mai mult"){
+  if (document.querySelector("#showless").innerHTML == "Mai mult"){
     document.getElementById("showless").innerHTML = "Mai putin";
   }
   else {
-    document.getElementById("showless").innerHTML = "Mai mult";
+    document.querySelector("#showless").innerHTML = "Mai mult";
   }
 }
 */
