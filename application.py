@@ -1,9 +1,13 @@
 from flask import Flask, render_template, url_for, flash, redirect
+from flask_sqlalchemy import SQLAlchemy
 from forms import RegisterForm, LoginForm
 
 app = Flask(__name__)
 
 app.config['SECRET_KEY'] = 'b29a5e61816e3c104500566e4909327d'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///site.db'
+
+db =  SQLAlchemy(app)
 
 @app.route("/")
 @app.route("/home")
