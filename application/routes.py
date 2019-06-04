@@ -15,7 +15,7 @@ def login():
 		return redirect(url_for('home'))
 	form = LoginForm()
 	if form.validate_on_submit():
-		user = User.query.filter_by(username='testadmin').first()
+		user = User.query.filter_by(username=form.username.data).first()
 		if user and bcrypt.check_password_hash(user.password, form.password.data):
 			login_user(user, remember=form.remember_me.data)
 			flash('Succesfuly logged in', 'success')
@@ -48,3 +48,15 @@ def logout():
 @login_required
 def account():
 	return render_template("account.html", title='Profile')
+
+@app.route("/data")
+@login_required
+def data():
+	data = User.query.all()
+	return render_template("data.html", title='Data', data=data)
+
+@app.route("/delete")
+def delete():
+	User.query.delete()
+	db.session.commit()
+	return redirect(url_for('home'))
