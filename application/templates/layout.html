@@ -10,9 +10,23 @@
         <title>Ab1May - {{ title }}</title>
     </head>
     <body data-spy="scroll" data-target=".navbar" data-offset="80" class="bg-light">
+        {% block header %}{% endblock%}
+        <!-- Messages -->
+        <div class="container ">
+          {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+              {% for category, message in messages %}
+                <div class="flash_messages alert alert-{{ category }}">
+                  {{ message }}
+                </div>
+              {% endfor %}
+            {% endif %}
+          {% endwith%}
+        </div>
+        <!-- END Messages -->
         {% block content %}{% endblock %}
         <!-- Footer-->
-        <footer class="container bg-light " style="padding-top:70px;padding-bottom:70px">   
+        <footer class="container bg-light small" style="padding-top:70px;padding-bottom:70px">   
             <address>
                     Written by <a target = "_blank" href="eduardstefan290@gmail.com.com">Eduard Stefan</a><br> 
                     Visit my <a target = "_blank" href = "https://github.com/edustef?tab=repositories">github page</a><br>
