@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block content %}
-<div class="container">
+<div class="container logreg">
 	<div class="content-section">
 		<form method='POST' action="">
 			<!-- This is for SECRET_KEY -->
@@ -45,7 +45,7 @@
 	<!-- Login redirect -->
 	<div class="border-top pt-3">
 		<small class="text-muted">
-			 Already have an acount? <a class="ml-2" href="/login">Login</a>
+			 Don't have an account? <a class="ml-2" href="{{ url_for('register')}}">Register</a>
 		</small>
 	</div>
 </div>
