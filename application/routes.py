@@ -1,8 +1,8 @@
-from flask import render_template, url_for, flash, redirect
+from flask import render_template, url_for, flash, redirect, request
 from application.forms import RegisterForm, LoginForm
 from application.models import User 
 from application import app, bcrypt, db
-from flask_login import login_user, current_user, logout_user
+from flask_login import login_user, current_user, logout_user, login_required
 
 @app.route("/")
 @app.route("/home")
@@ -19,7 +19,8 @@ def login():
 		if user and bcrypt.check_password_hash(user.password, form.password.data):
 			login_user(user, remember=form.remember_me.data)
 			flash('Succesfuly logged in', 'success')
-			return redirect(url_for('home'))
+			next_page = request.args.get('next')
+			return redirect(next_page) if next_page else redirect(url_for('home'))
 		else:
 			flash('Login unsuccesful. Please check username and password', 'danger')
 	return render_template("login.html", title='Login', form=form)
@@ -44,4 +45,6 @@ def logout():
 	return redirect(url_for('home'))
 
 @app.route("/account")
+@login_required
 def account():
+	return render_template("account.html", title='Profile')
