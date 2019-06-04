@@ -10,51 +10,23 @@
         <title>Ab1May - {{ title }}</title>
     </head>
     <body data-spy="scroll" data-target=".navbar" data-offset="80" class="bg-light">
-        {% block slider %}{% endblock %}
-        <!--NAVBAR-->
-        <nav id="home" class="navbar navbar-expand-sm bg-dark navbar-dark sticky-top" style="margin-bottom: 70px;">
-            <a class="navbar-brand" href="/home"><img src="static/images/logo.jpeg"></a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="collapsibleNavbar"> 
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#description">Descriere</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#gallery">Galerie foto</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#gallvideo">Galerie video</a>
-                    </li>
-                </ul>
-                <ul class="navbar-nav ml-auto">
-                  <li class="nav-item">
-                        <a class="nav-link" href="/register">Register</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/login">Login</a>
-                    </li>
-                </ul>
-            </div>
-        </nav>
-        <!--END NAVBAR-->
-        <div class="container">
+        {% block header %}{% endblock%}
+        <!-- Messages -->
+        <div class="container ">
           {% with messages = get_flashed_messages(with_categories=true) %}
             {% if messages %}
               {% for category, message in messages %}
-                <div class="alert alert-{{ category }}">
+                <div class="flash_messages alert alert-{{ category }}">
                   {{ message }}
                 </div>
               {% endfor %}
             {% endif %}
           {% endwith%}
         </div>
-          {% block content %}{% endblock %}
-        
+        <!-- END Messages -->
+        {% block content %}{% endblock %}
         <!-- Footer-->
-        <footer class="container bg-light " style="padding-top:70px;padding-bottom:70px">   
+        <footer class="container bg-light small" style="padding-top:70px;padding-bottom:70px">   
             <address>
                     Written by <a target = "_blank" href="eduardstefan290@gmail.com.com">Eduard Stefan</a><br> 
                     Visit my <a target = "_blank" href = "https://github.com/edustef?tab=repositories">github page</a><br>

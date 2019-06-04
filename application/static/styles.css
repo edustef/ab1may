@@ -1,6 +1,6 @@
 .navbar {
     background: rgba(0, 0, 0, .8)!important;
-    font-size: 1.4rem;
+    font-size: 1.3rem;
 }
 .navbar li {
     border-radius: 16px;
@@ -35,4 +35,18 @@ video {
 .picture img:hover {
     border: 2px solid #ccc;
     transform: scale(1.05);
+}
+#logout {
+    color:#cc6c6c;
+}
+#logout:hover {
+    font-size:1.2rem;
+    color:#f8f9fa;
+}
+.logreg {
+    margin-top: 32px;
+}
+.flash_messages {
+    margin-top: 16px;
+    margin-bottom: 16px;
 }
