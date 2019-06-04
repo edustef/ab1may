@@ -1,7 +1,7 @@
 flask
 flask_wtf
-wtforms
+flask_login
 flask_sqlalchemy
 flask_bcrypt
-flask_login
+wtforms
 gunicorn
