@@ -36,3 +36,11 @@ video {
     border: 2px solid #ccc;
     transform: scale(1.05);
 }
+
+.logreg {
+    margin-top: 32px;
+}
+.flash_messages {
+    margin-top: 16px;
+    margin-bottom: 16px;
+}
