@@ -7,20 +7,20 @@
 			<!-- This is for SECRET_KEY -->
 			{{ form.hidden_tag() }}
 			<fieldset class="form-group">
-				<legend class="border-bottom mb-4">Please enter your email and password</legend>
+				<legend class="border-bottom mb-4">Please enter your username and password</legend>
 				<!-- Email Form -->
 				<div class="form-group">
-					{{ form.email.label(class="form-control-label") }}
+					{{ form.username.label(class="form-control-label") }}
 
-					{% if form.email.errors %}
-						{{ form.email(class="form-control form-control-lg is-invalid") }}
+					{% if form.username.errors %}
+						{{ form.username(class="form-control form-control-lg is-invalid") }}
 						<div class="invalid-feedback">
-							{% for error in form.email.errors %}
+							{% for error in form.username.errors %}
 								<span> {{ error }} </span>
 							{% endfor %}
 						</div>
 					{% else %}
-						{{ form.email(class="form-control form-control-lg") }}
+						{{ form.username(class="form-control form-control-lg") }}
 					{% endif %}
 				</div>
 				<!-- Password Form -->
