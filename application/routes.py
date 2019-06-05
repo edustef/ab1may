@@ -5,14 +5,14 @@ from application import app, bcrypt, db
 from flask_login import login_user, current_user, logout_user, login_required
 
 @app.route("/")
-@app.route("/home")
-def home():
+@app.route("/index")
+def index():
 	return render_template("index.html", title='Home')
 
 @app.route("/login", methods=['GET', 'POST'])
 def login():
 	if current_user.is_authenticated:
-		return redirect(url_for('home'))
+		return redirect(url_for('index'))
 	form = LoginForm()
 	if form.validate_on_submit():
 		user = User.query.filter_by(username=form.username.data).first()
@@ -20,7 +20,7 @@ def login():
 			login_user(user, remember=form.remember_me.data)
 			flash('Succesfuly logged in', 'success')
 			next_page = request.args.get('next')
-			return redirect(next_page) if next_page else redirect(url_for('home'))
+			return redirect(next_page) if next_page else redirect(url_for('index'))
 		else:
 			flash('Login unsuccesful. Please check username and password', 'danger')
 	return render_template("login.html", title='Login', form=form)
@@ -28,7 +28,7 @@ def login():
 @app.route("/register", methods=['GET', 'POST'])
 def register():
 	if current_user.is_authenticated:
-		return redirect(url_for('home'))
+		return redirect(url_for('index'))
 	form = RegisterForm()
 	if form.validate_on_submit():
 		hash_pass = bcrypt.generate_password_hash(form.password.data).decode('utf-8')
@@ -42,7 +42,7 @@ def register():
 @app.route("/logout")
 def logout():
 	logout_user()
-	return redirect(url_for('home'))
+	return redirect(url_for('index'))
 
 @app.route("/account")
 @login_required
@@ -59,4 +59,4 @@ def data():
 def delete():
 	User.query.delete()
 	db.session.commit()
-	return redirect(url_for('home'))
+	return redirect(url_for('index'))
