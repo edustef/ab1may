@@ -24,7 +24,7 @@ video {
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-    height: 100vh;
+    height: 60vh;
 }
 .picture img{
     border-radius: .5rem;
