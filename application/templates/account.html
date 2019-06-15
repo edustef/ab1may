@@ -2,7 +2,58 @@
 
 {% block content %}
 	<div class="container">
-		<h1>{{ current_user.username }}</h1>
-	    <a class="nav-link" href="{{url_for('data')}}">Data</a>
-    </div>
+		<div class="row">
+			<div class="col-2">
+				<img class="rounded-circle avatar-img" src="{{ avatar_img }}">
+				<h2>{{ current_user.username }}</h2>
+				<small class="text-muted">{{ current_user.email }}</small>
+			</div>
+			<div class="col">
+				<form method='POST' action="">
+					<!-- This is for SECRET_KEY -->
+					{{ form.hidden_tag() }}
+					<fieldset class="form-group">
+						<legend class="border-bottom mb-4">Update your account</legend>
+						<div class="form-group">
+							<!-- Username Field -->
+							{{ form.username.label(class="form-control-label") }}
+							{% if form.username.errors %}
+								{{ form.username(class="form-control form-control-lg is-invalid") }}
+								<div class="invalid-feedback">
+									{% for error in form.username.errors %}
+										<span> {{ error }} </span>
+									{% endfor %}
+								</div>
+							{% else %}
+								{{ form.username(class="form-control form-control-lg") }}
+							{% endif %}
+						</div>
+						<!-- Email Field -->
+						<div class="form-group">
+							{{ form.email.label(class="form-control-label") }}
+							{% if form.email.errors %}
+								{{ form.email(class="form-control form-control-lg is-invalid") }}
+								<div class="invalid-feedback">
+									{% for error in form.email.errors %}
+										<span> {{ error }} </span>
+									{% endfor %}
+								</div>
+							{% else %}
+								{{ form.email(class="form-control form-control-lg") }}
+							{% endif %}
+						</div>
+					</fieldset>
+					<!-- Submit Button -->
+					<div class="form-group">
+						{{ form.submit(class="btn btn-outline-info") }}
+					</div>
+				</form>
+				<hr>
+				<h2>Debug Panel</h2>
+				<a class="btn btn-outline-info" href="{{url_for('data')}}">Data</a>
+			</div>
+		</div>
+		
+		
+	</div>
 {% endblock%}
